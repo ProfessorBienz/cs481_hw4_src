@@ -1,0 +1,10 @@
+include_directories(${hw4_INCDIR})
+
+add_executable(test_producer_consumer_cond test_producer_consumer.cpp)
+target_link_libraries(test_producer_consumer_cond hw4_cond googletest )
+add_test(TestCondProducerConsumer ./test_producer_consumer_cond)
+
+add_executable(test_producer_consumer_sem test_producer_consumer.cpp)
+target_link_libraries(test_producer_consumer_sem hw4_sem googletest )
+add_test(TestSemProducerConsumer ./test_producer_consumer_sem)
+
