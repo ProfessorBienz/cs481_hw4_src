@@ -8,3 +8,10 @@ add_executable(test_producer_consumer_sem test_producer_consumer.cpp)
 target_link_libraries(test_producer_consumer_sem hw4_sem googletest )
 add_test(TestSemProducerConsumer ./test_producer_consumer_sem)
 
+add_executable(test_philosopher_circ test_philosopher.cpp)
+target_link_libraries(test_philosopher_circ hw4_circ googletest )
+add_test(TestCircPhilosopher ./test_philosopher_circ)
+
+add_executable(test_philosopher_hold test_philosopher.cpp)
+target_link_libraries(test_philosopher_hold hw4_circ googletest )
+add_test(TestHoldPhilosopher ./test_philosopher_hold)
