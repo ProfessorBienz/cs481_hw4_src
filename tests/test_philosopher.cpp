@@ -27,6 +27,11 @@ TEST(TLBTest, TestsIntests)
     for (int i = 0; i < n; i++)
     {
         eat[i] = false;
+        sem_init(&(forks[i]), 0, 1);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
         diners[i].forks = forks;
         diners[i].size = n;
         diners[i].mutex = mutex;

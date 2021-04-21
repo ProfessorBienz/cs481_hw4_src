@@ -13,5 +13,5 @@ target_link_libraries(test_philosopher_circ hw4_circ googletest )
 add_test(TestCircPhilosopher ./test_philosopher_circ)
 
 add_executable(test_philosopher_hold test_philosopher.cpp)
-target_link_libraries(test_philosopher_hold hw4_circ googletest )
+target_link_libraries(test_philosopher_hold hw4_hold googletest )
 add_test(TestHoldPhilosopher ./test_philosopher_hold)
