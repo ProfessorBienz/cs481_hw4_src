@@ -25,15 +25,15 @@ TEST(TLBTest, TestsIntests)
     int n = n_p + n_c;
     pthread_t* threads = (pthread_t*)malloc(n*sizeof(pthread_t));
     data_t* data = (data_t*)malloc(n_p*sizeof(data_t));
+    for (int i = 0; i < n_c; i++)
+    {
+        pthread_create(&(threads[n_p+i]), NULL, consumer_thread, buf);
+    }
     for (int i = 0; i < n_p; i++)
     {
         data[i].buf = buf;
         data[i].val = i;
         pthread_create(&(threads[i]), NULL, producer_thread, &(data[i]));
-    }
-    for (int i = 0; i < n_c; i++)
-    {
-        pthread_create(&(threads[n_p+i]), NULL, consumer_thread, buf);
     }
 
     for (int i = 0; i < n_p; i++)
