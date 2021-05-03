@@ -31,7 +31,7 @@ void get(buffer_t* buf, int* val_ptr)
 
 void destroy(buffer_t* buf)
 {
-    delete buf->list;
+    delete[] buf->list;
 
     pthread_cond_destroy(&(buf->full));
     pthread_cond_destroy(&(buf->empty));
